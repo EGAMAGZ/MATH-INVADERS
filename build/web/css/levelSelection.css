@@ -1,0 +1,674 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani");
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+:root {
+    /* FUENTES */
+    --font-juego1: "Righteous", cursive;
+    --font-juego2: "Rajdhani", sans-serif;
+    --font-juego3: "Orbitron", sans-serif;
+    --font-juego4: "Press Start 2P", cursive;
+    --font-texto1: "M PLUS Rounded 1c", sans-serif;
+    --font-texto2: "Muli", sans-serif;
+
+    /* colores */
+    --color-borde1: #b9b9b9;
+    --color-borde2: #e0e0e0;
+    --color-borde3: #0300cf;
+}
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-image: url("../img/estrellasAcabado.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.nav-menu-container {
+    height: 100%;
+    position: absolute;
+    width: 35em;
+    top: 0;
+    left: -50em;
+    background: #353535ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: 1s all linear;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.nav-menu-container h2 {
+    transform: rotate(00deg);
+    font-family: var(--font-juego3);
+    background: #292929;
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.anillo1 {
+    width: 14em;
+    height: 14em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    position: relative;
+    transform: rotate(0deg);
+}
+.anillo1::after {
+    position: absolute;
+    bottom: -10px;
+    content: "";
+    width: 1em;
+    height: 1em;
+    background: blue;
+    border-radius: 50%;
+}
+.anillo2 {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    position: relative;
+    transform: rotate(0deg);
+}
+.anillo2::after {
+    position: absolute;
+    left: -10px;
+    content: "";
+    width: 1em;
+    height: 1em;
+    background: brown;
+    border-radius: 50%;
+}
+.anillo3 {
+    width: 26em;
+    height: 26em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    position: relative;
+    transform: rotate(0deg);
+}
+.anillo3::after {
+    position: absolute;
+    top: -10px;
+    content: "";
+    width: 1em;
+    height: 1em;
+    background: mediumpurple;
+    border-radius: 50%;
+}
+
+.circ-menu {
+    position: relative;
+    margin: -3em auto;
+    border: 0.2em solid #d47902bd;
+    padding: 0;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    list-style: none;
+    background: #fae900;
+    box-shadow: #fae100 0 0 250px;
+    transform: rotate(90deg);
+    transition: 1s all linear;
+}
+.circ-menu li {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin: -3em;
+}
+.circ-menu .btnCirc {
+    display: block;
+    width: inherit;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    font-family: var(--font-juego3);
+    font-weight: bolder;
+    padding: 5px 10px;
+    transition: 0.3s all linear;
+    background: none;
+    transform: rotate(-90deg);
+}
+.circ-menu .btnCirc:hover {
+    border-radius: 1em;
+    background: white;
+    color: black;
+    transform: rotate(-90deg);
+    font-size: 1em;
+}
+
+.active {
+    border-radius: 1em;
+    background: white;
+    color: black;
+    transform: rotate(-90deg);
+    font-size: 1em;
+}
+
+.circ-menu li:first-child {
+    transform: rotate(-112.5deg) translateY(-10em) rotate(112.5deg);
+}
+.circ-menu li:nth-child(2) {
+    transform: rotate(-67.5deg) translateY(-10em) rotate(67.5deg);
+}
+.circ-menu li:nth-child(3) {
+    transform: rotate(-22.5deg) translateY(-10em) rotate(22.5deg);
+}
+.circ-menu li:nth-child(4) {
+    transform: rotate(22.5deg) translateY(-10em) rotate(-22.5deg);
+}
+.circ-menu li:nth-child(5) {
+    transform: rotate(67.5deg) translateY(-10em) rotate(-67.5deg);
+}
+
+#menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0 0 0 1em;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    transition: 0.2s all linear;
+    border-left: 4px solid #3f3f3f;
+    border-bottom: 4px solid #3f3f3f;
+    font-family: var(--font-juego1);
+    z-index: 30;
+}
+#menu:hover {
+    letter-spacing: 0.5em;
+}
+
+.logout-container {
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #74747479;
+}
+.logout {
+    background: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 1em;
+    border: 4px solid black;
+}
+.logout h2 {
+    font-family: var(--font-texto1);
+    border-bottom: 4px solid black;
+    text-align: center;
+    font-size: 2em;
+}
+.logout p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+.logout button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 4px solid black;
+    margin-left: 1em;
+    margin-right: 1em;
+    transition: 0.3s all linear;
+}
+
+#cancelar:hover {
+    background: red;
+    font-weight: bolder;
+    width: 10em;
+}
+#aceptar:hover {
+    background: green;
+    font-weight: bolder;
+    width: 10em;
+}
+
+.logout div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.profile-container {
+    position: fixed;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.prof1 {
+    display: table;
+    width: 20%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.prof1 div {
+    border-radius: 1em;
+    background: #5a5a5ae0;
+    margin: 1em;
+}
+
+.prof1 h2 {
+    font-family: var(--font-juego4);
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    padding-top: 0.25em;
+}
+.prof1 p {
+    text-align: center;
+    color: white;
+    font-family: var(--font-juego1);
+    font-size: 2em;
+}
+
+.prof2 {
+    display: table;
+    width: 80%;
+    float: left;
+    height: 100%;
+    background: white;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: url(../img/wallpaper.jpg);
+    background-position: top right;
+    background-size: cover;
+}
+
+.title-profile {
+    width: 100%;
+    text-align: left;
+    height: 10%;
+    color: white;
+    font-weight: bolder;
+    font-family: var(--font-juego1);
+    font-size: 1.5em;
+    display: table;
+    float: left;
+}
+.info-profile-container {
+    width: 90%;
+    height: 80%;
+    display: table;
+    float: left;
+    background: #3d3d3de0;
+    border-radius: 1em;
+}
+.info1-container,
+.info2-container {
+    display: table;
+    float: left;
+    width: 35%;
+    height: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+.info1,
+.info2 {
+    width: 90%;
+    display: table;
+    float: left;
+    background: #252525;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.info1 h2 {
+    text-align: center;
+    color: white;
+    font-family: var(--font-texto2);
+    border-bottom: 4px solid #7c0400;
+    margin-bottom: 1em;
+    padding: 5px 10px;
+}
+
+.info1 input[type="text"] {
+    width: 100%;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px 0px;
+    border: 0;
+    margin: 0;
+}
+
+.info1 input[type="submit"] {
+    width: 100%;
+    height: 2em;
+    margin-top: 1em;
+    border-radius: 1em;
+    transition: 0.3s all linear;
+}
+
+.info1 input[type="submit"]:hover {
+    border-radius: 0;
+    background: #7c0400;
+    color: white;
+}
+
+.info2 h2 {
+    text-align: center;
+    color: white;
+    font-family: var(--font-texto2);
+    border-bottom: 4px solid #7c0400;
+    margin-bottom: 1em;
+    padding: 5px 10px;
+}
+
+.info2 p{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--font-juego3);
+    color: white;
+    font-weight: bolder;
+}
+
+.info2-container {
+    display: table;
+    float: left;
+    height: 80%;
+    background: #252525;
+    border-radius: 1em;
+    color: white;
+    padding: 1em;
+}
+
+/* Niveles */
+
+.LevelSelection-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    display: none;
+}
+.level-title {
+    width: 100%;
+    height: 10%;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid #0300cf;
+    z-index: 7;
+}
+.level-title p {
+    padding: 10px 20px;
+    font-family: var(--font-texto1);
+    font-weight: bolder;
+    font-size: 1em;
+}
+.levels-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.level-card {
+    display: inline-flex;
+    float: left;
+    width: 25%;
+    border-radius: 1em;
+    justify-content: center;
+    color: white;
+    transition: 0.3s all ease-in-out;
+}
+
+
+
+.lvl-title{
+    font-family: var(--font-juego3);
+    font-size: 2em;
+    transform: scale(1);
+}
+
+.lvl-name{
+    font-family: var(--font-juego4);
+    font-size: 1em;
+    text-align: center;
+    margin-top: 1em;  
+    transform: scale(1);
+    transition: 0.5s all linear;
+    background: none;
+    color: white;
+}
+.level-card:hover .lvl-name{
+    transform: scale(1.3);
+}
+.level-card button{
+    padding: 10px 20px;
+    width: 100%;
+    display: none;
+    background: none;
+    border: 2px solid #fae100;
+    color: #fae100;
+    border-radius: .5em;
+    font-family: var(--font-juego4);
+    transform: scale(1);
+    margin-top: 2em;
+}
+.level-card:hover button{
+    display: block;
+}
+
+
+
+
+/* Puntuaje */
+
+.puntuaje-container {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.puntuaje-div1,
+.puntuaje-div2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-score-container {
+    width: 80%;
+    height: 90%;
+    border-radius: 1em;
+    background: #292929ea;
+    border: 2px solid #0300b1;
+    box-shadow: #0300b1 0px 0px 1em;
+}
+
+.user-score-title {
+    width: 100%;
+    height: 5em;
+    display: flex;
+    float: left;
+    background: #020070;
+    border-radius: 1em 1em 0 0;
+    justify-content: center;
+    align-items: center;
+}
+.user-score-title p {
+    font-size: 1.5em;
+    color: white;
+    font-weight: bolder;
+    font-family: var(--font-juego3);
+}
+
+
+/* Controles */
+.controles-container{
+    position: absolute;
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    z-index: 2
+}
+.info-control-container{
+    width: 100%;
+}
+.info-control-title{
+    text-align: center;
+    font-family: var(--font-juego1);  
+    background: #020070;
+    color: white;
+    font-size: 1.5em;
+    animation:3s parpadeo ease-in-out infinite;
+}
+.info-control-container:hover .info-control-title{
+    animation: none;
+    background: #fae100;
+    color: black;
+}
+.info-control-container:hover .info-control-text{
+    display: block;
+    border: 2px solid #fae100;
+    padding: 5px;
+}
+.info-control-text{
+    color: white;
+    font-family: var(--font-juego3);
+    display: none;
+}
+
+.info-control-text button{
+    color: white;
+    padding: 5px 20px;
+    border-radius: 0 0 6px 6px;
+    background: #4b4b4b;
+    font-family: var(--font-texto2);
+    width: auto
+}
+
+.info-control-text button:hover{
+    background: #707070;
+}
+
+@keyframes parpadeo{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+/* ///////////// REESCALAR ///////////// */
+@media screen and (max-width:900px){
+    #menu{
+        padding:2px 5px;
+        font-size: .5em;
+    }
+    #menu:hover {
+        letter-spacing: 0.1em;
+    }
+
+    .nav-menu-container h2{
+        padding-bottom: 0;
+        padding-top: 0;
+        font-size: 2em;
+    }
+    .anillo1{
+        width: 3.5em;
+        height: 3.5em;
+    }
+    .anillo2{
+        width: 5em;
+        height: 5em;
+    }
+    .anillo3{
+        width: 6.5em;
+        height: 6.5em;
+    }
+    .circ-menu{
+        width: 2.5em;
+        height: 2.5em;
+    }
+    .btnCirc:hover{
+        font-size: .3em;
+    }
+
+    .circ-menu li:first-child {
+        transform: rotate(-112.5deg) translateY(-5em) rotate(112.5deg);
+    }
+    .circ-menu li:nth-child(2) {
+        transform: rotate(-67.5deg) translateY(-5em) rotate(67.5deg);
+    }
+    .circ-menu li:nth-child(3) {
+        transform: rotate(-22.5deg) translateY(-5em) rotate(22.5deg);
+    }
+    .circ-menu li:nth-child(4) {
+        transform: rotate(22.5deg) translateY(-5em) rotate(-22.5deg);
+    }
+    .circ-menu li:nth-child(5) {
+        transform: rotate(67.5deg) translateY(-5em) rotate(-67.5deg);
+    }
+    .level-card button{
+        padding: 2px 5px;
+        margin-top: 0.5em;
+    }
+    .lvl-name{
+        margin-top: 0.5em;
+    }
+}

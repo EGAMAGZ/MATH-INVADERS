@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+
+:root {
+  --font-juego1: "Permanent Marker", cursive;
+}
+
+.pacman {
+  position: relative;
+  margin-bottom: 15px;
+}
+.pacman > div:nth-child(2) {
+  animation: balls 1s -0.99s infinite linear;
+}
+.pacman > div:nth-child(3) {
+  animation: balls 1s -0.66s infinite linear;
+}
+.pacman > div:nth-child(4) {
+  animation: balls 1s -0.33s infinite linear;
+}
+.pacman > div:nth-child(5) {
+  animation: balls 1s 0s infinite linear;
+}
+.pacman > div:nth-child(1) {
+  width: 0px;
+  height: 0px;
+  border: 80px solid #fff;
+  border-right: 80px solid transparent;
+  border-radius: 80px;
+  animation: rotate_pacman_half_up 0.5s 0s infinite;
+  position: relative;
+  left: -60px;
+}
+.pacman > div:nth-child(2) {
+  width: 0px;
+  height: 0px;
+  border: 80px solid #fff;
+  border-right: 80px solid transparent;
+  border-radius: 80px;
+  animation: rotate_pacman_half_down 0.5s 0s infinite;
+  margin-top: -160px;
+  position: relative;
+  left: -60px;
+}
+.pacman > div:nth-child(3),
+.pacman > div:nth-child(4),
+.pacman > div:nth-child(5),
+.pacman > div:nth-child(6) {
+  background-color: #fff;
+  border-radius: 100%;
+  margin: 2px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 70px;
+  left: 200px;
+}
+
+@keyframes rotate_pacman_half_up {
+  0% {
+    transform: rotate(270deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotate_pacman_half_down {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes balls {
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-150px, 0);
+  }
+}
